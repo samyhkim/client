@@ -26,9 +26,9 @@ class StreamCreate extends React.Component {
   };
 
   // Will attempt to create new stream if our form is valid
-  onSubmit(formValues) {
+  onSubmit = formValues => {
     this.props.createStream(formValues);
-  }
+  };
 
   render() {
     return (
