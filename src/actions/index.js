@@ -50,11 +50,12 @@ export const fetchStream = id => async dispatch => {
   dispatch({ type: FETCH_STREAM, payload: response.data });
 };
 
-// PUT request to update matching stream with new form values
+// PATCH request to update matching stream with new form values
 export const editStream = (id, formValues) => async dispatch => {
-  const response = await stream.put(`/streams/${id}`, formValues);
+  const response = await stream.patch(`/streams/${id}`, formValues);
 
   dispatch({ type: EDIT_STREAM, payload: response.data });
+  history.push("/");
 };
 
 // DELETE request to delete stream with matching ID
